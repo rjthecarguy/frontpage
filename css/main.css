@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+svg {
+    font-size: 8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+}
+
+svg rect {
+    fill:white;
+    mask:url(#mask);
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
+

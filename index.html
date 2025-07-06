@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Text clipping</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body style="margin:0; overflow:hidden;">
+
+    <!-- Responsive Fullscreen Video -->
+    <video autoplay muted loop playsinline preload
+        style="position:fixed; top:0; left:0; width:100vw; height:100vh; object-fit:cover; z-index:-1;">
+        <source src="/video/test.mp4" type="video/mp4">
+    </video>
+
+    <!-- Responsive SVG Mask -->
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"
+        style="position:absolute; top:0; left:0; width:100vw; height:100vh;">
+        
+        <defs>
+            <mask id="mask" x="0" y="0" height="100%" width="100%" maskUnits="userSpaceOnUse">
+                <!-- White background (fully visible) -->
+                <rect x="0" y="0" width="100" height="100" fill="white"/>
+                <!-- Black text cutout (reveals video behind) -->
+                <text x="50" y="55" text-anchor="middle" font-size="10" fill="black">
+                    Dameron Communications
+                </text>
+            </mask>
+        </defs>
+
+        <!-- Apply the mask -->
+        <rect x="0" y="0" width="100" height="100" fill="black" mask="url(#mask)" />
+    </svg>
+
+</body>
+
+</html>
