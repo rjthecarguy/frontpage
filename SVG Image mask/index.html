@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Mask - Dameron</title>
+  
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline preload>
+    <source src="/video/test.mp4" type="video/mp4" />
+  </video>
+
+  <!-- SVG Mask Overlay -->
+  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <mask id="mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <!-- Opaque background -->
+        <rect x="0" y="0" width="100" height="100" fill="white" />
+
+        <!-- Outlined text from Impact font (scaled to fit mask space) -->
+        <g transform="translate(10, 20) scale(0.15)">
+          <!-- BEGIN: Paste from outlined SVG -->
+          <path d="M66.32,76.41H50.82L47.92,86H35.78L53.75,33.88H63.5L81.47,86H69.34ZM63.63,68.08l-
