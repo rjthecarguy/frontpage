@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Letter Animation</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -51,6 +53,26 @@
     .tagline span {
       font-size: 2vw;
     }
+
+    .logo, .tagline {
+  font-family: 'Poppins', sans-serif;
+}
+.video-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
+  z-index: 0; /* above video, below text */
+}
+.logo span {
+  font-size: 10vw;  /* large responsive headline */
+}
+
+.tagline span {
+  font-size: 2vw;  /* smaller, but still responsive */
+}
+
   </style>
 </head>
 <body>
@@ -59,6 +81,7 @@
   <video autoplay muted loop playsinline>
     <source src="/video/test.mp4" type="video/mp4" />
   </video>
+<div class="video-overlay"></div>
 
   <!-- Text overlay -->
   <div class="intro">
@@ -87,7 +110,7 @@
           y: 0,
           duration: 0.5,
           ease: "power2.out",
-          stagger: 0.1
+          stagger: 0.3
         })
         .to(".tagline span", {
           opacity: 1,
